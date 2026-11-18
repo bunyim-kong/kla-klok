@@ -1,10 +1,7 @@
 import {useEffect,useRef,useState} from 'react';
+import {request} from './roomApi';
 const key='kla-klok-room';
 function stored(){try{return JSON.parse(sessionStorage.getItem(key))}catch{return null}}
-async function request(path,method='GET',data,token){
- const response=await fetch('/api/'+path,{method,headers:{'Content-Type':'application/json',...(token?{Authorization:'Bearer '+token}:{})},body:data?JSON.stringify(data):undefined,signal:AbortSignal.timeout(8000)});
- const value=await response.json();if(!response.ok)throw new Error(value.error||'Unable to reach the room.');return value;
-}
 export function useRoom(){
  const [session,setSession]=useState(stored),[room,setRoom]=useState(null),[error,setError]=useState(''),[pending,setPending]=useState(false),[connected,setConnected]=useState(false);
  const lock=useRef(false),revision=useRef(0);
