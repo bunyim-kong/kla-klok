@@ -1,0 +1,14 @@
+import React from 'react';
+
+// Transparent vector artwork stays crisp on the board, dice, and history.
+const artwork = {
+ tiger: <><circle cx="29" cy="28" r="15" fill="#efaa48"/><circle cx="71" cy="28" r="15" fill="#efaa48"/><path d="M20 39Q20 18 50 20Q80 18 80 39L77 68Q71 89 50 88Q29 89 23 68Z" fill="#f4b451"/><path d="M39 23L45 39L50 23M62 25L57 39M23 44L36 49L24 54M77 44L64 49L76 54M26 64L37 65M74 64L63 65"/><ellipse cx="50" cy="69" rx="20" ry="14" fill="#fff0cf"/><path d="M44 61H56L50 68ZM50 68V74M50 74L42 77M50 74L58 77"/><circle cx="37" cy="53" r="3"/><circle cx="63" cy="53" r="3"/></>,
+ gourd: <><path d="M50 24Q46 13 58 9" fill="none"/><path d="M53 20Q66 8 77 18Q66 30 53 20" fill="#7eaa5b"/><path d="M36 31Q36 20 50 20Q64 20 64 31Q64 43 59 48Q82 58 77 75Q73 90 50 90Q27 90 23 75Q18 58 41 48Q36 43 36 31" fill="#d8b853"/><path d="M42 29Q38 36 45 44M35 61Q27 73 39 80" stroke="#fff0ba" fill="none"/></>,
+ rooster: <><path d="M30 65Q5 59 14 36Q28 34 39 55M29 57Q9 32 26 26Q41 36 42 57" fill="#4e8b83"/><path d="M48 34Q40 15 48 12Q53 10 56 21Q62 6 67 14L67 29" fill="#dc6350"/><path d="M33 52Q38 41 51 44L51 31Q56 20 66 27Q76 32 69 47Q80 73 54 78Q29 81 26 62Z" fill="#f1d9a3"/><path d="M68 34L84 40L69 45" fill="#e7ad42"/><path d="M64 46Q78 55 67 61Q60 61 61 49" fill="#dc6350"/><path d="M38 57Q57 45 59 62Q48 75 38 57" fill="#d2964d"/><circle cx="63" cy="33" r="2"/><path d="M46 78V89H37M60 78V89H69" fill="none"/></>,
+ shrimp: <><path d="M61 30Q71 9 88 18M58 29Q54 6 37 13" fill="none"/><path d="M67 35Q84 49 75 69Q66 92 43 82Q20 72 34 57Q44 48 50 58Q39 67 51 71Q64 74 64 62Q63 51 48 45Z" fill="#ed9279"/><path d="M44 32L70 24L73 41L51 47Z" fill="#f4b09a"/><circle cx="64" cy="32" r="3"/><path d="M70 48L60 52M76 60L64 61M70 74L60 68M56 83L54 72M42 78L46 69M33 59L22 48L19 64L31 70M51 48L40 51M58 53L46 58" fill="none"/></>,
+ crab: <><path d="M30 59L13 53L6 62M30 69L14 70L8 80M70 59L87 53L94 62M70 69L86 70L92 80M32 48L21 36M68 48L79 36" fill="none"/><path d="M22 40Q1 35 10 17L18 29L26 16Q38 32 22 40M78 40Q99 35 90 17L82 29L74 16Q62 32 78 40" fill="#ec795d"/><ellipse cx="50" cy="61" rx="29" ry="22" fill="#ef9874"/><path d="M40 41V33M60 41V33"/><circle cx="40" cy="32" r="4" fill="#fff0cf"/><circle cx="60" cy="32" r="4" fill="#fff0cf"/><path d="M42 67Q50 73 58 67" fill="none"/></>,
+ fish: <><path d="M37 41L46 20L65 38M41 66L55 83L65 64" fill="#d5b969"/><path d="M29 46L9 31L12 52L9 74L30 61" fill="#65b1ac"/><path d="M25 53Q51 18 86 50Q91 53 86 58Q51 86 25 53" fill="#87c5b8"/><path d="M69 38Q57 52 69 68M47 46L56 53L47 60" fill="none"/><circle cx="76" cy="49" r="4" fill="#fff5d9"/><circle cx="77" cy="49" r="1.5"/></>,
+};
+export default function SymbolIcon({id,label}) {
+ return <svg className="symbol-icon" viewBox="0 0 100 100" role="img" aria-label={label} fill="#34443b" stroke="#34443b" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">{artwork[id]}</svg>;
+}
